@@ -1,13 +1,9 @@
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 
-const LoginPage = ({navigation}) => (
+const CompletedPage = () => (
   <View style={styles.container}>
-    <Text>Login Page</Text>
-    <Button
-      title="Click here to login"
-      onPress={() => navigation.push('bottom-tabs')}
-    />
+    <Text>Completed Page</Text>
   </View>
 );
 
@@ -20,4 +16,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginPage;
+export default CompletedPage;
