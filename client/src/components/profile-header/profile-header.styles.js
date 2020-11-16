@@ -27,17 +27,6 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 25,
     backgroundColor: 'white',
   },
-  profilePicture: {
-    display: 'flex',
-    height: 95,
-    width: 95,
-    borderRadius: 100,
-    borderColor: 'grey',
-    borderWidth: StyleSheet.hairlineWidth,
-    top: -45,
-    zIndex: 5,
-    position: 'absolute',
-  },
   nameContainer: {
     display: 'flex',
     justifyContent: 'center',

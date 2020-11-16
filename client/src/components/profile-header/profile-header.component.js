@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, Image, Dimensions} from 'react-native';
 
+import ProfilePicture from '../profile-picture/profile-picture.component';
+
 import profile from '../../assets/images/profile.jpg';
 import headerBkg from '../../assets/images/canyons.jpg';
 
@@ -19,7 +21,7 @@ const ProfileHeader = () => (
       />
     </View>
     <View style={styles.userInfoContainer}>
-      <Image source={profile} style={styles.profilePicture} />
+      <ProfilePicture source={profile} size="large" />
 
       <View style={styles.nameContainer}>
         <Text style={styles.displayName}>Ryan Stern</Text>
