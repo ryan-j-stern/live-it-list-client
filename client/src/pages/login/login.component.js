@@ -14,12 +14,15 @@ const LoginPage = ({navigation}) => (
         title="Click here to login"
         onPress={() => navigation.push('bottom-tabs')}
       /> */}
-      <LoginButton />
+      <LoginButton handlePress={() => navigation.push('bottom-tabs')} />
       {/* <Button
         title="Click here to login"
         onPress={() => navigation.push('bottom-tabs')}
       /> */}
-      <LoginButton facebook />
+      <LoginButton
+        facebook
+        handlePress={() => navigation.push('bottom-tabs')}
+      />
     </View>
   </View>
 );

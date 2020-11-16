@@ -6,12 +6,13 @@ import googleLogo from '../../assets/images/google_logo.png';
 
 import styles from './login-button.styles';
 
-const LoginButton = ({facebook}) => (
+const LoginButton = ({facebook, handlePress}) => (
   <TouchableOpacity
     style={[
       styles.loginButton,
       facebook ? styles.loginButtonFacebook : styles.loginButtonGoogle,
-    ]}>
+    ]}
+    onPress={handlePress}>
     <Image
       source={facebook ? facebookLogo : googleLogo}
       style={
