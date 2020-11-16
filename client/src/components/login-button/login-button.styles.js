@@ -25,12 +25,13 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   text: {
-    fontSize: 20,
+    fontSize: 17,
     fontWeight: '500',
     color: 'white',
   },
   textGoogle: {
-    marginLeft: 8,
+    marginLeft: 15,
+    fontWeight: '600',
     // color: 'grey',
   },
 });
