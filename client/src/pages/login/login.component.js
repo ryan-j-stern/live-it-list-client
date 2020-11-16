@@ -1,13 +1,26 @@
 import React from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, Text, Button, StyleSheet, Dimensions} from 'react-native';
+
+import LoginButton from '../../components/login-button/login-button.component';
 
 const LoginPage = ({navigation}) => (
   <View style={styles.container}>
-    <Text>Login Page</Text>
-    <Button
-      title="Click here to login"
-      onPress={() => navigation.push('bottom-tabs')}
-    />
+    <View style={styles.titleAndMottoContainer}>
+      <Text style={styles.title}>LiveItList</Text>
+      <Text style={styles.motto}>Life is short. Live it.</Text>
+    </View>
+    <View style={styles.buttonContainer}>
+      {/* <Button
+        title="Click here to login"
+        onPress={() => navigation.push('bottom-tabs')}
+      /> */}
+      <LoginButton />
+      {/* <Button
+        title="Click here to login"
+        onPress={() => navigation.push('bottom-tabs')}
+      /> */}
+      <LoginButton facebook />
+    </View>
   </View>
 );
 
@@ -17,6 +30,30 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  titleAndMottoContainer: {
+    display: 'flex',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: Dimensions.get('screen').width,
+    padding: 20,
+  },
+  title: {
+    fontSize: 75,
+  },
+  motto: {
+    fontSize: 20,
+    marginTop: 15,
+  },
+  buttonContainer: {
+    display: 'flex',
+    flex: 2,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    width: Dimensions.get('screen').width,
+    // borderColor: 'black',
+    // borderWidth: 1,
   },
 });
 
