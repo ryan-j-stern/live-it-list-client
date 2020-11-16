@@ -1,22 +1,4 @@
-import React from 'react';
-import {
-  View,
-  ScrollView,
-  Text,
-  Image,
-  Dimensions,
-  StyleSheet,
-} from 'react-native';
-
-import TopTabs from '../../components/navigation/top-tabs.component';
-import ProfileHeader from '../../components/profile-header/profile-header.component';
-
-const ProfilePage = ({navigation}) => (
-  <ScrollView>
-    <ProfileHeader />
-    <TopTabs />
-  </ScrollView>
-);
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   profile: {
@@ -25,11 +7,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  backgroundImage: {
+  backgroundImageContainer: {
     display: 'flex',
     flex: 1,
   },
-  userInfo: {
+  userInfoContainer: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
@@ -44,16 +26,23 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     backgroundColor: 'white',
-    // borderColor: 'black',
-    // borderWidth: 1,
+  },
+  profilePicture: {
+    display: 'flex',
+    height: 95,
+    width: 95,
+    borderRadius: 100,
+    borderColor: 'grey',
+    borderWidth: StyleSheet.hairlineWidth,
+    top: -45,
+    zIndex: 5,
+    position: 'absolute',
   },
   nameContainer: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
-    // borderColor: 'black',
-    // borderWidth: 1,
     bottom: -38,
   },
   displayName: {
@@ -63,16 +52,20 @@ const styles = StyleSheet.create({
   userHandle: {
     fontSize: 15,
   },
+  userBio: {
+    display: 'flex',
+    flex: 1,
+    paddingHorizontal: 25,
+    justifyContent: 'center',
+    bottom: -23,
+  },
   userDataContainer: {
     display: 'flex',
     justifyContent: 'space-evenly',
     flex: 1,
     flexDirection: 'row',
-    // borderColor: 'black',
-    // borderWidth: 1,
     alignItems: 'center',
     width: '100%',
-    // top: -10,
     bottom: -10,
   },
   userData: {
@@ -90,4 +83,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProfilePage;
+export default styles;

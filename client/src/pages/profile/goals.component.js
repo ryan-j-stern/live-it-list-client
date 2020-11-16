@@ -2,24 +2,8 @@ import React from 'react';
 import {View, Text, ScrollView, StyleSheet} from 'react-native';
 
 const GoalsPage = () => (
-  <View>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
-    <Text style={styles.text}>Goals Page</Text>
+  <View style={styles.container}>
+    <Text>Goals Page</Text>
   </View>
 );
 
