@@ -1,9 +1,11 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
+import SearchBar from '../../components/search-bar/search-bar.component';
+
 const HomePage = () => (
   <View style={styles.container}>
-    <Text>Home Page</Text>
+    <SearchBar placeholder="Search For Friends" />
   </View>
 );
 
@@ -11,7 +13,6 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
   },
 });

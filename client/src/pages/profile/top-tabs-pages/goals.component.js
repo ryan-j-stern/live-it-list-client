@@ -1,9 +1,10 @@
 import React from 'react';
 import {View, Text, ScrollView, StyleSheet} from 'react-native';
+import SearchBar from '../../../components/search-bar/search-bar.component';
 
 const GoalsPage = () => (
   <View style={styles.container}>
-    <Text>Goals Page</Text>
+    <SearchBar placeholder="Search Your Goals" />
   </View>
 );
 
