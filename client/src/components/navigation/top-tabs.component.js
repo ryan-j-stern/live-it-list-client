@@ -2,9 +2,9 @@ import React from 'react';
 
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
-import CompletedPage from '../../pages/profile/completed.component';
-import GoalsPage from '../../pages/profile/goals.component';
-import PostsPage from '../../pages/profile/posts.component';
+import CompletedPage from '../../pages/profile/top-tabs-pages/completed.component';
+import GoalsPage from '../../pages/profile/top-tabs-pages/goals.component';
+import PostsPage from '../../pages/profile/top-tabs-pages/posts.component';
 
 const Tab = createMaterialTopTabNavigator();
 
