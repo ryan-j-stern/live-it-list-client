@@ -92,6 +92,42 @@ const INITIAL_STATE = {
         },
       ],
     },
+    {
+      id: 52,
+      type: '',
+      title: 'Run a half ironman',
+      date: '11.19.2020',
+      user: {
+        name: 'Ryan Stern',
+        profilePic: profilePic,
+      },
+      likes: [
+        {
+          id: 35,
+          name: 'Joe Smith',
+          imgUrl: canyons,
+        },
+        {id: 6, name: 'Corey Chin', imgUrl: canyons},
+      ],
+      comments: [
+        {
+          id: 230,
+          user: {
+            name: 'Joe Smith',
+            imgUrl: canyons,
+          },
+          comment: 'Looks amazing! So proud of you.',
+        },
+        {
+          id: 2231,
+          user: {
+            name: 'Gus Martinez',
+            imgUrl: canyons,
+          },
+          comment: 'Fuck it.',
+        },
+      ],
+    },
   ],
 };
 

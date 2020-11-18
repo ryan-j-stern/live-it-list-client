@@ -27,12 +27,14 @@ const Goal = ({goal, hideComments, toggleHideComments}) => (
         <Text style={styles.title}>{goal.title}</Text>
       </View>
 
-      <View style={styles.likeCommentContainer}>
-        <Text style={styles.likeCommentText}>{goal.likes.length} likes</Text>
-        <Text style={styles.likeCommentText}>
-          {goal.comments.length} comments
-        </Text>
-      </View>
+      {goal.type !== '' ? (
+        <View style={styles.likeCommentContainer}>
+          <Text style={styles.likeCommentText}>{goal.likes.length} likes</Text>
+          <Text style={styles.likeCommentText}>
+            {goal.comments.length} comments
+          </Text>
+        </View>
+      ) : null}
 
       <View style={styles.buttonContainer}>
         {goal.type === '' ? (
@@ -49,7 +51,7 @@ const Goal = ({goal, hideComments, toggleHideComments}) => (
         )}
       </View>
     </View>
-    {hideComments ? null : (
+    {hideComments || goal.type === '' ? null : (
       <CommentsSection
         comments={goal.comments}
         handlePress={() => toggleHideComments()}
