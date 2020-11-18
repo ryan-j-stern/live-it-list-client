@@ -1,13 +1,16 @@
 import React from 'react';
-import {View, Image} from 'react-native';
+import {Image} from 'react-native';
 
 import styles from './profile-picture.styles';
 
-const ProfilePicture = ({source, size}) => (
-  <Image
-    source={source}
-    style={size == 'large' ? styles.large : styles.small}
-  />
-);
+const ProfilePicture = ({source, size}) => {
+  let picStyle;
+
+  if (size === 'large') picStyle = styles.large;
+  else if (size === 'x-small') picStyle = styles.xSmall;
+  else picStyle = styles.small;
+
+  return <Image source={source} style={picStyle} />;
+};
 
 export default ProfilePicture;

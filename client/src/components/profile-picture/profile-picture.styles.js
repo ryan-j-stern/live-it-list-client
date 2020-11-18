@@ -14,14 +14,19 @@ const styles = StyleSheet.create({
   },
   small: {
     display: 'flex',
-    height: 30,
-    width: 30,
+    height: 45,
+    width: 45,
     borderRadius: 100,
     borderColor: 'grey',
     borderWidth: StyleSheet.hairlineWidth,
-    top: -45,
-    zIndex: 5,
-    position: 'absolute',
+  },
+  xSmall: {
+    display: 'flex',
+    height: 35,
+    width: 35,
+    borderRadius: 100,
+    borderColor: 'grey',
+    borderWidth: StyleSheet.hairlineWidth,
   },
 });
 
