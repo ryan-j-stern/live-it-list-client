@@ -2,7 +2,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
+    marginBottom: 10,
     display: 'flex',
     alignItems: 'center',
   },
@@ -26,6 +26,18 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 30,
+    fontWeight: '300',
+  },
+  likeCommentContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 145,
+    marginBottom: 15,
+    padding: 2,
+  },
+  likeCommentText: {
+    fontSize: 15,
     fontWeight: '300',
   },
   buttonContainer: {

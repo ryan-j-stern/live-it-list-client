@@ -5,9 +5,14 @@ import GoalHeader from '../goal-header/goal-header.component';
 import CustomButton from '../custom-button/custom-button.component';
 import CommentsSection from '../comments-section/comments-section.component';
 
+import {connect} from 'react-redux';
+import {toggleHideComments} from '../../redux/post/post.actions';
+import {createStructuredSelector} from 'reselect';
+import {selectHideComments} from '../../redux/post/post.selectors';
+
 import styles from './goal.styles';
 
-const Goal = ({goal}) => (
+const Goal = ({goal, hideComments, toggleHideComments}) => (
   <View style={styles.container}>
     <View style={styles.goalContainer}>
       <GoalHeader
@@ -22,6 +27,13 @@ const Goal = ({goal}) => (
         <Text style={styles.title}>{goal.title}</Text>
       </View>
 
+      <View style={styles.likeCommentContainer}>
+        <Text style={styles.likeCommentText}>{goal.likes.length} likes</Text>
+        <Text style={styles.likeCommentText}>
+          {goal.comments.length} comments
+        </Text>
+      </View>
+
       <View style={styles.buttonContainer}>
         {goal.type === '' ? (
           <CustomButton>Make Progress</CustomButton>
@@ -31,12 +43,30 @@ const Goal = ({goal}) => (
         {goal.type === '' ? (
           <CustomButton>Complete</CustomButton>
         ) : (
-          <CustomButton>Comment</CustomButton>
+          <CustomButton handlePress={() => toggleHideComments()}>
+            Comment
+          </CustomButton>
         )}
       </View>
     </View>
-    <CommentsSection comments={goal.comments} />
+    {hideComments ? null : (
+      <CommentsSection
+        comments={goal.comments}
+        handlePress={() => toggleHideComments()}
+      />
+    )}
   </View>
 );
 
-export default Goal;
+const mapStateToProps = createStructuredSelector({
+  hideComments: selectHideComments,
+});
+
+const mapDispatchToProps = dispatch => ({
+  toggleHideComments: () => dispatch(toggleHideComments()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Goal);

@@ -4,7 +4,7 @@ import {TouchableOpacity, Text} from 'react-native';
 import styles from './custom-button.styles';
 
 const CustomButton = ({handlePress, children}) => (
-  <TouchableOpacity style={styles.customButtonContainer}>
+  <TouchableOpacity style={styles.customButtonContainer} onPress={handlePress}>
     <Text style={styles.text}>{children}</Text>
   </TouchableOpacity>
 );

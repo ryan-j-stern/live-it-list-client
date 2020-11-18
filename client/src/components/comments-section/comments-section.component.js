@@ -5,14 +5,14 @@ import Comment from './comment/comment.component';
 
 import styles from './comments-section.styles';
 
-const CommentsSection = ({comments = []}) => (
+const CommentsSection = ({comments = [], handlePress}) => (
   <>
     {comments.length > 0 ? (
       <View style={styles.commentSectionContainer}>
         {comments.map(comment => (
           <Comment key={comment.id} comm={comment} />
         ))}
-        <Button title="Hide comments" />
+        <Button title="Hide comments" onPress={handlePress} />
       </View>
     ) : null}
   </>

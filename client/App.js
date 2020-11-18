@@ -9,11 +9,11 @@ import StackNav from './src/components/navigation/stack.component';
 
 const App = () => {
   return (
-    // <Provider store={store}>
-    <NavigationContainer>
-      <StackNav />
-    </NavigationContainer>
-    // </Provider>
+    <Provider store={store}>
+      <NavigationContainer>
+        <StackNav />
+      </NavigationContainer>
+    </Provider>
   );
 };
 
