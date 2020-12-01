@@ -3,10 +3,12 @@ import {View, TextInput, Text} from 'react-native';
 
 import styles from './search-bar.styles';
 
-const SearchBar = ({...otherProps}) => (
-  <View style={styles.searchBarContainer}>
-    <TextInput {...otherProps} />
-  </View>
-);
+const SearchBar = ({action, ...otherProps}) => {
+  return (
+    <View style={styles.searchBarContainer}>
+      <TextInput {...otherProps} onChangeText={text => action(text)} />
+    </View>
+  );
+};
 
 export default SearchBar;
