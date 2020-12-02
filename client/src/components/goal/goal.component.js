@@ -14,10 +14,16 @@ const Goal = ({goal}) => (
         name={goal.user.name}
         date={goal.date}
       />
+
       <View style={styles.textContainer}>
+        {goal.completed === true ? (
+          <Text style={styles.type}>Completed:</Text>
+        ) : null}
         <Text style={styles.title}>{goal.title}</Text>
       </View>
-      <CustomButtonContainer type={goal.type} handleOpenComment={() => {}} />
+      {goal.completed === false ? (
+        <CustomButtonContainer type={goal.type} handleOpenComment={() => {}} />
+      ) : null}
     </View>
   </View>
 );

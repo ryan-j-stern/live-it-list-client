@@ -8,6 +8,7 @@ const INITIAL_STATE = {
       type: 'goal',
       title: 'Surf in Hawaii',
       date: '11.19.2020',
+      completed: true,
       user: {
         name: 'Ryan Stern',
         profilePic: profilePic,
@@ -18,6 +19,7 @@ const INITIAL_STATE = {
       type: 'goal',
       title: 'Run a marathon',
       date: '11.19.2020',
+      completed: true,
       user: {
         name: 'Ryan Stern',
         profilePic: profilePic,
@@ -28,6 +30,7 @@ const INITIAL_STATE = {
       type: 'goal',
       title: 'Visit all 50 states',
       date: '11.19.2020',
+      completed: false,
       user: {
         name: 'Ryan Stern',
         profilePic: profilePic,
@@ -38,6 +41,7 @@ const INITIAL_STATE = {
       type: 'goal',
       title: 'Get on the Joe Rogan Podcast',
       date: '11.19.2020',
+      completed: false,
       user: {
         name: 'Ryan Stern',
         profilePic: profilePic,

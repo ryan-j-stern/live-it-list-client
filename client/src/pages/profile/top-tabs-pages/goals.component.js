@@ -6,6 +6,7 @@ import {createStructuredSelector} from 'reselect';
 import {
   selectGoals,
   selectSearchField,
+  selectNotCompleted,
 } from '../../../redux/goals/goals.selector';
 import {changeSearchFieldText} from '../../../redux/goals/goals.actions';
 
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = createStructuredSelector({
-  goals: selectGoals,
+  goals: selectNotCompleted,
   searchField: selectSearchField,
 });
 

@@ -23,6 +23,11 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: '300',
   },
+  type: {
+    fontSize: 18,
+    fontWeight: '700',
+    marginBottom: 5,
+  },
 });
 
 export default styles;
