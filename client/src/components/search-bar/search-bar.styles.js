@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     marginVertical: 13,
     backgroundColor: 'white',
     fontSize: 18,
+    position: 'relative',
   },
 });
 

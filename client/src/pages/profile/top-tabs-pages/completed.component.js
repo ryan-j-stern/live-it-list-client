@@ -20,7 +20,7 @@ const CompletedPage = ({goals, searchField, changeSearchFieldText}) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <SearchBar
-        placeholder="Search Your Goals"
+        placeholder="Search Your Completed Goals"
         action={changeSearchFieldText}
       />
       {searchableGoals.map(goal => (
@@ -33,8 +33,7 @@ const CompletedPage = ({goals, searchField, changeSearchFieldText}) => {
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    // flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
   },
   text: {

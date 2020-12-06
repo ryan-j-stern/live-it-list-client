@@ -96,7 +96,7 @@ const INITIAL_STATE = {
     },
     {
       id: 52,
-      type: '',
+      type: 'Completed',
       title: 'Run a half ironman',
       date: '11.19.2020',
       user: {
