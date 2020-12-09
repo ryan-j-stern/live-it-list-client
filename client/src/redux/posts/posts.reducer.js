@@ -55,7 +55,6 @@ const INITIAL_STATE = {
           comment: 'Fuck it.',
         },
       ],
-      hideComments: true,
     },
     {
       id: 2,
@@ -92,7 +91,6 @@ const INITIAL_STATE = {
           comment: 'Fuck it.',
         },
       ],
-      hideComments: true,
     },
     {
       id: 52,
@@ -129,7 +127,6 @@ const INITIAL_STATE = {
           comment: 'Fuck it.',
         },
       ],
-      hideComments: true,
     },
     {
       id: 562,

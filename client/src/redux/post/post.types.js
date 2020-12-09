@@ -1,3 +1,0 @@
-export const POST_ACTION_TYPES = {
-  TOGGLE_COMMENTS: 'TOGGLE_COMMENTS',
-};
