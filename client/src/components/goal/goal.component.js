@@ -60,6 +60,7 @@ const Goal = ({goal}) => {
           <MakeProgressModal
             showModal={showModal}
             setShowModal={setShowModal}
+            goal={goal}
           />
         ) : null}
       </View>

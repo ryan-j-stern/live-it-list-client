@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput, Text, Dimensions} from 'react-native';
+import {SafeAreaView, View, TextInput, Text, Dimensions} from 'react-native';
 
 import CustomButtonContainer from '../../components/custom-button-container/custom-button-container.component';
 
@@ -29,7 +29,7 @@ const AddGoal = ({navigation}) => {
     //   </View>
     // </View>
 
-    <View
+    <SafeAreaView
       style={{
         flex: 1,
         backgroundColor: 'black',
@@ -113,7 +113,7 @@ const AddGoal = ({navigation}) => {
           type="submit"
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

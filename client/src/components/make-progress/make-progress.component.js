@@ -1,12 +1,37 @@
 import React, {useState} from 'react';
-import {Modal, View, Text, TextInput, Dimensions} from 'react-native';
+import {
+  Modal,
+  View,
+  Text,
+  TextInput,
+  Image,
+  SafeAreaView,
+  TouchableOpacity,
+} from 'react-native';
 
 import CustomButton from '../custom-button/custom-button.component';
 import CustomButtonContainer from '../custom-button-container/custom-button-container.component';
 
-const MakeProgressModal = ({showModal, setShowModal, ...otherProps}) => {
-  // const {} = otherProps;
+import * as ImagePicker from 'react-native-image-picker';
+import styles from './make-progress.styles';
+
+const MakeProgressModal = ({showModal, setShowModal, goal}) => {
   const [currentFont, setCurrentFont] = useState(35);
+  const [imageSelected, setImageSelected] = useState(null);
+  const {title} = goal;
+
+  selectImage = () =>
+    ImagePicker.launchImageLibrary(
+      {
+        mediaType: 'photo',
+        includeBase64: false,
+        maxHeight: 200,
+        maxWidth: 200,
+      },
+      response => {
+        response.uri ? setImageSelected(response.uri) : setImageSelected(null);
+      },
+    );
 
   return (
     <Modal
@@ -16,40 +41,11 @@ const MakeProgressModal = ({showModal, setShowModal, ...otherProps}) => {
       onRequestClose={() => {
         Alert.alert('Modal has been closed.');
       }}>
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: 'black',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <View
-          style={{
-            display: 'flex',
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-            // borderColor: 'white',
-            // borderWidth: 1,
-          }}>
-          <View
-            style={{
-              borderColor: 'white',
-              borderRadius: 50,
-              borderWidth: 1,
-              height: 55,
-              width: 55,
-            }}
-          />
-          <View
-            style={{
-              display: 'flex',
-              justifyContent: 'space-around',
-              alignItems: 'center',
-              width: Dimensions.get('screen').width * 0.9,
-              padding: 5,
-            }}>
-            <Text style={{color: 'white'}}>Make progress on:</Text>
+      <SafeAreaView style={styles.makeProgress}>
+        <View style={styles.topContainer}>
+          <View style={styles.logoPlaceholder} />
+          <View style={styles.titleContainer}>
+            <Text style={styles.text}>Make progress on:</Text>
             <View>
               <Text
                 numberOfLines={2}
@@ -60,45 +56,33 @@ const MakeProgressModal = ({showModal, setShowModal, ...otherProps}) => {
                     setCurrentFont(currentFont - 1);
                   }
                 }}
-                style={{color: 'white', fontSize: currentFont}}>
-                Dive in the Gulf of Mexico
+                style={[styles.text, {fontSize: currentFont}]}>
+                {title}
               </Text>
             </View>
           </View>
         </View>
-        <View style={{display: 'flex', justifyContent: 'center'}}>
-          <CustomButton>Select Photo</CustomButton>
+        <View style={styles.imageButtonContainer}>
+          {imageSelected === null ? (
+            <CustomButton handlePress={selectImage}>Select Photo</CustomButton>
+          ) : (
+            <TouchableOpacity activeOpacity={0.8} onPress={selectImage}>
+              <Image
+                source={{uri: imageSelected}}
+                style={styles.selectedImage}
+              />
+            </TouchableOpacity>
+          )}
         </View>
-        <View
-          style={{
-            display: 'flex',
-            flex: 1,
-            justifyContent: 'center',
-          }}>
+        <View style={styles.inputContainer}>
           <TextInput
             placeholder="Caption (140 characters max)"
             multiline={true}
             numberOfLines={8}
-            style={{
-              borderColor: 'black',
-              borderRadius: 15,
-              borderWidth: 1,
-              height: Dimensions.get('screen').height * 0.15,
-              width: Dimensions.get('screen').width * 0.9,
-              padding: 10,
-              paddingTop: 10,
-              fontSize: 23,
-              fontWeight: '300',
-              backgroundColor: 'white',
-            }}
+            style={styles.input}
           />
         </View>
-        <View
-          style={{
-            display: 'flex',
-            flex: 0.5,
-            justifyContent: 'center',
-          }}>
+        <View style={styles.buttons}>
           <CustomButtonContainer
             handleButtonPress1={() => {
               setShowModal(!showModal);
@@ -106,7 +90,7 @@ const MakeProgressModal = ({showModal, setShowModal, ...otherProps}) => {
             type="submit"
           />
         </View>
-      </View>
+      </SafeAreaView>
     </Modal>
   );
 };
