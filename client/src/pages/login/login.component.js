@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, Button, StyleSheet, Dimensions} from 'react-native';
 
+import {onFacebookButtonPress} from './login.utils';
+
 import LoginButton from '../../components/login-button/login-button.component';
 
 const LoginPage = ({navigation}) => (
@@ -10,15 +12,7 @@ const LoginPage = ({navigation}) => (
       <Text style={styles.motto}>Life is short. Live it.</Text>
     </View>
     <View style={styles.buttonContainer}>
-      {/* <Button
-        title="Click here to login"
-        onPress={() => navigation.push('bottom-tabs')}
-      /> */}
       <LoginButton handlePress={() => navigation.push('bottom-tabs')} />
-      {/* <Button
-        title="Click here to login"
-        onPress={() => navigation.push('bottom-tabs')}
-      /> */}
       <LoginButton
         facebook
         handlePress={() => navigation.push('bottom-tabs')}
