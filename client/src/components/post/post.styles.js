@@ -10,9 +10,9 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     padding: 15,
     borderColor: 'black',
-    borderWidth: 1,
+    borderWidth: StyleSheet.hairlineWidth,
     width: Dimensions.get('screen').width * 0.92,
-    borderRadius: 25,
+    borderRadius: 15,
     backgroundColor: 'white',
   },
   textContainer: {

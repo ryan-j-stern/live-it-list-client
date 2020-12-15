@@ -5,13 +5,15 @@ import GoalHeader from '../goal-header/goal-header.component';
 import CustomButtonContainer from '../custom-button-container/custom-button-container.component';
 import Progress from '../progress/progress.component';
 import MakeProgressModal from '../make-progress/make-progress.component';
+import CompleteModal from '../complete/complete.component';
 
 import styles from './goal.styles';
 
 // Add MakeProgressModal when Button1 is clicked
 
 const Goal = ({goal}) => {
-  const [showModal, setShowModal] = useState(false);
+  const [showProgressModal, setShowProgressModal] = useState(false);
+  const [showCompleteModal, setShowCompleteModal] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -52,14 +54,22 @@ const Goal = ({goal}) => {
 
         {goal.completed === false ? (
           <CustomButtonContainer
-            handleButtonPress1={() => setShowModal(!showModal)}
+            handleButtonPress1={() => setShowProgressModal(!showProgressModal)}
+            handleButtonPress2={() => setShowCompleteModal(!showCompleteModal)}
             type={goal.type}
           />
         ) : null}
-        {showModal ? (
+        {showProgressModal ? (
           <MakeProgressModal
-            showModal={showModal}
-            setShowModal={setShowModal}
+            showModal={showProgressModal}
+            setShowModal={setShowProgressModal}
+            goal={goal}
+          />
+        ) : null}
+        {showCompleteModal ? (
+          <CompleteModal
+            showModal={showCompleteModal}
+            setShowModal={setShowCompleteModal}
             goal={goal}
           />
         ) : null}

@@ -9,17 +9,30 @@ import styles from './post.styles';
 
 const Post = ({goal}) => {
   const [hideComments, setHideComments] = useState(true);
+  let borderColor;
+
+  switch (goal.type) {
+    case 'Created':
+      borderColor = '#8cdd81';
+      break;
+    case 'Made Progress':
+      borderColor = '#fc8eac';
+      break;
+    default:
+      borderColor = '#fcc200';
+      break;
+  }
 
   return (
     <View style={styles.container}>
-      <View style={styles.goalContainer}>
+      <View style={[styles.goalContainer, {borderColor: borderColor}]}>
         <GoalHeader
           imgUrl={goal.user.profilePic}
           name={goal.user.name}
           date={goal.date}
         />
         <View style={styles.textContainer}>
-          <Text style={styles.type}>{goal.type}:</Text>
+          <Text style={[styles.type, {color: borderColor}]}>{goal.type}:</Text>
 
           <Text style={styles.title}>{goal.title}</Text>
         </View>

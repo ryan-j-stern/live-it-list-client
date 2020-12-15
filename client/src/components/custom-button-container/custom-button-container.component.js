@@ -21,6 +21,14 @@ const CustomButtonContainer = ({
       textButton1 = 'Cancel';
       textButton2 = 'Submit';
       break;
+    case 'complete':
+      textButton1 = 'Cancel';
+      textButton2 = 'Complete';
+      break;
+    case 'yesno':
+      textButton1 = 'No';
+      textButton2 = 'Yes';
+      break;
     default:
       textButton1 = 'Boost';
       textButton2 = 'Comment';

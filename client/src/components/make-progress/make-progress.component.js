@@ -16,7 +16,7 @@ import * as ImagePicker from 'react-native-image-picker';
 import styles from './make-progress.styles';
 
 const MakeProgressModal = ({showModal, setShowModal, goal}) => {
-  const [currentFont, setCurrentFont] = useState(35);
+  const [currentFont, setCurrentFont] = useState(45);
   const [imageSelected, setImageSelected] = useState(null);
   const {title} = goal;
 
