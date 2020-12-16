@@ -13,13 +13,16 @@ const Post = ({goal}) => {
 
   switch (goal.type) {
     case 'Created':
-      borderColor = '#8cdd81';
+      // borderColor = '#8cdd81';
+      borderColor = '#588a51';
       break;
     case 'Made Progress':
-      borderColor = '#fc8eac';
+      // borderColor = '#fc8eac';
+      borderColor = '#687e8d';
       break;
     default:
-      borderColor = '#fcc200';
+      // borderColor = '#c2bca0';
+      borderColor = '#ada480';
       break;
   }
 

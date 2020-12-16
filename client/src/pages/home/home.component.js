@@ -31,7 +31,9 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: '#3783ff',
+    // backgroundColor: '#3783ff',
+    // backgroundColor: '#687e8d',
+    backgroundColor: '#bac7cd',
   },
 });
 

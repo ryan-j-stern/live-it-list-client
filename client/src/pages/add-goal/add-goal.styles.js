@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
   addGoal: {
     display: 'flex',
     flex: 1,
+    backgroundColor: '#bac7cd',
   },
   topContainer: {
     display: 'flex',

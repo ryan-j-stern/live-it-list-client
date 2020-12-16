@@ -3,7 +3,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 const styles = StyleSheet.create({
   makeProgress: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#bac7cd',
     alignItems: 'center',
     justifyContent: 'center',
   },

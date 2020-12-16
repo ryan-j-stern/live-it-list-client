@@ -32,7 +32,7 @@ const AddGoal = ({navigation}) => {
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: '#bac7cd',
         alignItems: 'center',
         justifyContent: 'center',
       }}>
