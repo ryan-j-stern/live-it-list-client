@@ -9,7 +9,7 @@ import headerBkg from '../../assets/images/canyons.jpg';
 
 import styles from './profile-header.styles';
 
-const ProfileHeader = () => {
+const ProfileHeader = ({user}) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -40,14 +40,15 @@ const ProfileHeader = () => {
         </TouchableOpacity>
 
         <View style={styles.nameContainer}>
-          <Text style={styles.displayName}>Ryan Stern</Text>
+          <Text style={styles.displayName}>{user.displayName}</Text>
           <Text style={styles.userHandle}>@ryan</Text>
         </View>
         <View style={styles.userBio}>
           <Text style={{fontSize: 15, color: 'grey'}}>
-            Don't let the completed fool you. I still have a lot more to go.
+            {/* Don't let the completed fool you. I still have a lot more to go.
             Don't let the completed fool you I still have a lot more to go more
-            to go
+            to go */}
+            {user.photoUrl}
           </Text>
         </View>
 

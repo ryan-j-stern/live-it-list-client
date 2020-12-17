@@ -1,0 +1,3 @@
+export const USER_TYPES = {
+  FACEBOOK_LOGIN: 'FACEBOOK_LOGIN',
+};
